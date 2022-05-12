@@ -1,11 +1,11 @@
-FROM 
+FROM node:14.17.5-alpine
 
-EXPOSE 
+EXPOSE 3000
 
-WORKDIR /
+WORKDIR /app
 
-COPY 
+COPY . .
 
-RUN 
+RUN npm install
 
-ENTRYPOINT 
+CMD ["npm", "start"]
