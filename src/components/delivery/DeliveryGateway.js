@@ -169,8 +169,15 @@ class DeliveryGateway extends React.Component {
                 console.log('NEW ADDRESS ADDED TO DATABASE!');
                 console.log('Address => ' + JSON.stringify(newAddress));
                 // this.props.history.push('/payment');
+            }).then(result => {
+                this.submitAlert();
+                console.log("Delivery Details Submitted!!!")
             });
         }
+    }
+
+    submitAlert() {
+        alert("Delivery Details Submitted!!!");
     }
 
     // TODO: Display Website
