@@ -46,7 +46,7 @@ class DeliveryGateway extends React.Component {
 
         userid: '',
         title: '',
-        addresss: '',
+        location: '',
         province: '',
         district: '',
         city: '',
@@ -64,7 +64,7 @@ class DeliveryGateway extends React.Component {
 
     // TODO: Set Values for state variables
     assignAddressHandler = (event) => {
-        this.setState({addresss: event.target.value})
+        this.setState({location: event.target.value})
     }
     assignProvinceHandler = (event) => {
         this.setState({province: event.target.value})
@@ -103,13 +103,13 @@ class DeliveryGateway extends React.Component {
     calculateAddress = (event) => {
         event.preventDefault();
 
-        if (this.state.title == null && this.state.addresss == null) {
+        if (this.state.title == null && this.state.location == null) {
             alert("Fill All Data!!!");
         } else {
             let formAddress = {
                 userid: this.state.userid,
                 title: this.state.title,
-                addresss: this.state.addresss,
+                location: this.state.location,
                 province: this.state.province,
                 district: this.state.district,
                 city: this.state.city,
@@ -134,7 +134,7 @@ class DeliveryGateway extends React.Component {
     addressShowHandler() {
         this.setState({
             title2: this.state.title,
-            address2: this.state.addresss,
+            address2: this.state.location,
             province2: this.state.province,
             district2: this.state.district,
             city2: this.state.city,
@@ -147,13 +147,13 @@ class DeliveryGateway extends React.Component {
     submitAddress = (event) => {
         event.preventDefault();
 
-        if (this.state.addresss == null) {
+        if (this.state.location == null) {
             alert("Fill All Data!!!");
         } else {
             let newAddress = {
                 userid: this.state.userid,
                 title: this.state.title,
-                addresss: this.state.addresss,
+                location: this.state.location,
                 province: this.state.province,
                 district: this.state.district,
                 city: this.state.city,
@@ -191,8 +191,8 @@ class DeliveryGateway extends React.Component {
                                     <Form.Control required as="textarea"
                                                   placeholder={'Address Here...'}
                                                   rows={3}
-                                                  name={'addresss'}
-                                                  value={this.state.addresss}
+                                                  name={'location'}
+                                                  value={this.state.location}
                                                   onChange={this.assignAddressHandler}/>
                                 </Form.Group>
                             </Form.Row>
@@ -308,7 +308,7 @@ class DeliveryGateway extends React.Component {
 
                     <Card.Footer>
                         <Form id={'submitAddress'} onSubmit={this.submitAddress.bind(this)}>
-                            <Form.Control required name={'addresss'} defaultValue={this.state.addresss} hidden={true}/>
+                            <Form.Control required name={'location'} defaultValue={this.state.location} hidden={true}/>
                             <Form.Control required name={'province'} defaultValue={this.state.province} hidden={true}/>
                             <Form.Control required name={'district'} defaultValue={this.state.district} hidden={true}/>
                             <Form.Control required name={'city'} defaultValue={this.state.city} hidden={true}/>
