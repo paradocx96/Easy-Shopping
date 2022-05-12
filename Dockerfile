@@ -1,0 +1,11 @@
+FROM 
+
+EXPOSE 
+
+WORKDIR /
+
+COPY 
+
+RUN 
+
+ENTRYPOINT 
